@@ -114,7 +114,7 @@ CREATE TABLE EMPLOYEES.Employees(
     DepartmentID INT FOREIGN KEY REFERENCES Departments(DepartmentID),
     FirstName STRING,
     LastName STRING,
-    Position STRING,
+    PositionID INT FOREIGN KEY REFERENCES Positions(PositionID),
     ManagerID INT FOREIGN KEY REFERENCES Employees(EmployeeID) -- Мениджър на служителя, ако има такъв (може да е NULL)
 );
 
