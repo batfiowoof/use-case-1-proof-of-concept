@@ -57,7 +57,7 @@ def generate_inserts(business_climate):
         insert_statements.append(f"INSERT INTO ATTRACTIONS.MaintenanceRecords (StartDate, EndDate, Description, AttractionID) VALUES ('{start_date}', '{end_date}', '{description}', {maintenance_id});")
 
     #Магазини
-    store_names = ['Souvenirs', 'Snacks', 'Drinks', 'Toys', 'Books']
+    store_names = ['Steak Dreams', 'Cafe Latte', 'Bar Hopper', 'Gift Shop', 'Snack Shack']
     store_categories = ['Restaurant', 'Cafe', 'Bar', 'Shop', 'Kiosk']
     for store_id in range(1, 6):
         store_name = random.choice(store_names)
