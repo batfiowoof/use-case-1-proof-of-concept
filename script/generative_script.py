@@ -4,7 +4,7 @@ import datetime
 def generate_inserts(business_climate):
     insert_statements = []
 
-    #Visitors
+    #Посетители
     first_names = ['Bozhidar', 'Mihail' , 'Georgi', 'Plamen', 'Petar']
     last_names = ['Petrov', 'Lambov', 'Dimitrov', 'Stoyanov', 'Nikolov']
 
@@ -14,15 +14,17 @@ def generate_inserts(business_climate):
         insert_statements.append(f"INSERT INTO VISITORS.Visitors (FirstName, LastName) VALUES ('{first_name}', '{last_name}');")
 
 
-    #Tickets
+    #Билети
     ticket_types = ['Standard','VIP']
     price_range = (30,100) if business_climate == 'positive' else (10, 50)
     for visitor_id in range(1, 101 if business_climate == 'positive' else 21):
         ticket_type = random.choice(ticket_types)
         price = round(random.uniform(price_range[0], price_range[1]), 2)
-        insert_statements.append(f"INSERT INTO VISITORS.Tickets (VisitorId, TicketType, Price) VALUES ({visitor_id}, '{ticket_type}', {price});")
+        purchase_time = datetime.datetime.now() - datetime.timedelta(hours=random.randint(1, 8))
+        purchase_time = purchase_time.strftime('%Y-%m-%d %H:%M:%S')
+        insert_statements.append(f"INSERT INTO VISITORS.Tickets (TicketType, Price, PurchaseTime, VisitorID) VALUES ('{ticket_type}', {price}, '{purchase_time}', {visitor_id});")
 
-    #Entries
+    #Посещения
     for entry_id in range(1, 101 if business_climate == 'positive' else 21):
         entry_time = datetime.datetime.now() - datetime.timedelta(hours = random.randint(1, 8))
         leave_time = entry_time + datetime.timedelta(hours=random.randint(2, 6))
@@ -30,15 +32,21 @@ def generate_inserts(business_climate):
         leave_time = leave_time.strftime('%Y-%m-%d %H:%M:%S')
         insert_statements.append(f"INSERT INTO VISITORS.Entries (EntryTime, LeaveTime, VisitorId, TicketID) VALUES ('{entry_time}', '{leave_time}', {entry_id}, {entry_id});")
 
-    #Attractions
+    #Атракциони
     attraction_names = ['Rollercoaster', 'Ferris Wheel', 'Haunted House', 'Carousel', 'Bumper Cars']
     attraction_categories = ['Thrill', 'Family', 'Horror', 'Kids', 'Fun']
+    attraction_capacities = [50, 100, 20, 30, 40]
+    attraction_age_restrictions = [16, 10, 18, 5, 12]
+    attraction_statuses = ['Open', 'Closed', 'Under Maintenance']
     for attraction_id in range(1, 6):
         attraction_name = attraction_names[attraction_id - 1]
         attraction_category = attraction_categories[attraction_id - 1]
-        insert_statements.append(f"INSERT INTO ATTRACTIONS.Attractions (AttractionName, Category) VALUES ('{attraction_name}', '{attraction_category}');")
+        attraction_capacity = attraction_capacities[attraction_id - 1]
+        attraction_age_restriction = attraction_age_restrictions[attraction_id - 1]
+        attraction_status = random.choice(attraction_statuses)
+        insert_statements.append(f"INSERT INTO ATTRACTIONS.Attractions (Name, Category, Capacity, AgeRestriction, Status) VALUES ('{attraction_name}', '{attraction_category}', {attraction_capacity}, {attraction_age_restriction}, '{attraction_status}');")
 
-    #Maintenance records
+    #Поддръжка
     descriptions = ['Cleaning', 'Repair', 'Inspection', 'Replacement', 'Upgrade']
     for maintenance_id in range(1, 6):
         start_date = datetime.datetime.now() - datetime.timedelta(days=random.randint(1, 30))
@@ -48,32 +56,44 @@ def generate_inserts(business_climate):
         description = random.choice(descriptions)
         insert_statements.append(f"INSERT INTO ATTRACTIONS.MaintenanceRecords (StartDate, EndDate, Description, AttractionID) VALUES ('{start_date}', '{end_date}', '{description}', {maintenance_id});")
 
-    #Stores
+    #Магазини
     store_names = ['Souvenirs', 'Snacks', 'Drinks', 'Toys', 'Books']
     store_categories = ['Restaurant', 'Cafe', 'Bar', 'Shop', 'Kiosk']
     for store_id in range(1, 6):
         store_name = random.choice(store_names)
         store_category = random.choice(store_categories)
-        insert_statements.append(f"INSERT INTO STORES.Stores (StoreName, Category) VALUES ('{store_name}', '{store_category}');")
+        opening_time = datetime.datetime.now() - datetime.timedelta(hours=random.randint(1, 8))
+        closing_time = opening_time + datetime.timedelta(hours=random.randint(2, 6))
+        opening_time = opening_time.strftime('%Y-%m-%d %H:%M:%S')
+        closing_time = closing_time.strftime('%Y-%m-%d %H:%M:%S')
+        insert_statements.append(f"INSERT INTO STORES.Stores (Name, Category, OpeningTime, ClosingTime) VALUES ('{store_name}', '{store_category}', '{opening_time}', '{closing_time}');")
 
-    #Products
+    #Продукти
     product_names = ['T-shirt', 'Magnet', 'Cup', 'Keychain', 'Book']
     product_categories = ['Clothing', 'Accessories', 'Kitchenware', 'Souvenirs', 'Books']
-    product_prices = (20, 50)
+    product_prices = (20, 50) if business_climate == 'positive' else (10, 30)
     for product_id in range(1, 6):
         product_name = product_names[product_id - 1]
         product_category = product_categories[product_id - 1]
         product_price = round(random.uniform(product_prices[0], product_prices[1]), 2)
         insert_statements.append(f"INSERT INTO STORES.Products (ProductName, Category, Price) VALUES ('{product_name}', '{product_category}', {product_price});")
 
-    #Sales
+    #Инвентар
+    quantities = [10, 20, 30, 40, 50]
+    for inventory_id in range(1, 6):
+        product_id = inventory_id
+        store_id = inventory_id
+        quantity = random.choice(quantities)
+        insert_statements.append(f"INSERT INTO STORES.Inventory (ProductID, StoreID, Quantity) VALUES ({product_id}, {store_id}, {quantity});")
+
+    #Продажби
 
     for sale_id in range(100,150 if business_climate == 'positive' else 20):
         quantity = random.randint(50, 100 if business_climate == 'positive' else 20)
-        total_price = round(quantity * random.uniform(product_price[0], product_price[1]), 2)
+        total_price = round(quantity * random.uniform(product_prices[0], product_prices[1]), 2)
         insert_statements.append(f"INSERT INTO STORES.Sales (ProductID, StoreID, Quantity, TotalPrice) VALUES ({sale_id}, {sale_id}, {quantity}, {total_price});")
 
-    #Expenses
+    #Разходи
     expense_types = ['Rent', 'Utilities', 'Salaries', 'Maintenance', 'Supplies']
     amount = (1000, 2000)
     for expense_id in range(1, 6):
@@ -83,7 +103,7 @@ def generate_inserts(business_climate):
         expense_date = expense_date.strftime('%Y-%m-%d')
         insert_statements.append(f"INSERT INTO FINANCE.Expenses (ExpenseType, Amount, ExpenseDate) VALUES ('{expense_type}', {expense_amount}, '{expense_date}');")
 
-    #Income
+    #Приходи
     income_types = ['Ticket Sales', 'Store Sales', 'Donations', 'Sponsorships', 'Grants']
     amount = (5000, 10000 if business_climate == 'positive' else 2000)
     for income_id in range(1, 6):
@@ -93,40 +113,43 @@ def generate_inserts(business_climate):
         income_date = income_date.strftime('%Y-%m-%d')
         insert_statements.append(f"INSERT INTO FINANCE.Income (IncomeType, Amount, IncomeDate) VALUES ('{income_type}', {income_amount}, '{income_date}');")
 
-    #Departments
+    #Отдели
     department_names = ['Marketing', 'Finance', 'Maintenance', 'Security', 'HR']
     for department_id in range(1, 6):
         department_name = department_names[department_id - 1]
-        insert_statements.append(f"INSERT INTO EMPLOYEES.Departments (Name) VALUES ('{department_name}');")
+        manager_id = department_id
+        insert_statements.append(f"INSERT INTO EMPLOYEES.Departments (Name, ManagerID) VALUES ('{department_name}', {manager_id});")
 
-    #Positions
+    #Позиции
     position_names = ['Manager', 'Supervisor', 'Employee', 'Security Guard', 'Janitor']
+    base_salaries = [6000, 4000, 3000, 2000, 1000]
     for position_id in range(1, 6):
         position_name = position_names[position_id - 1]
-        insert_statements.append(f"INSERT INTO EMPLOYEES.Positions (Name) VALUES ('{position_name}');")
+        base_salary = base_salaries[position_id - 1]
+        insert_statements.append(f"INSERT INTO EMPLOYEES.Positions (Name, BaseSalary) VALUES ('{position_name}', {base_salary});")
 
-    #Employees
+    #Служители
     for employee_id in range(1, 6):
         first_name = random.choice(first_names)
         last_name = random.choice(last_names)
         department_id = random.randint(1, 5)
         position_id = random.randint(1, 5)
-        manager_id = 'NULL'
-        if employee_id % 2 == 0:
-            manager_id = employee_id - 1
+        manager_id = random.randint(1, 5)
+        shift_id = employee_id
         insert_statements.append(f"INSERT INTO EMPLOYEES.Employees (FirstName, LastName, DepartmentID, PositionID, ManagerID) VALUES ('{first_name}', '{last_name}', {department_id}, {position_id}, {manager_id});")
 
-    #Shifts
-    shift_dates = [datetime.datetime.now() - datetime.timedelta(days=random.randint(1, 30)) for _ in range(5)]
-    hours_worked = [8, 10, 12]
+    #Смени
+    shift_names = ['Morning', 'Afternoon', 'Evening', 'Night', 'Overtime']
+    shift_start_times = ['08:00:00', '12:00:00', '16:00:00', '20:00:00', '00:00:00']
+    shift_end_times = ['12:00:00', '16:00:00', '20:00:00', '00:00:00', '04:00:00']
     for shift_id in range(1, 6):
         employee_id = shift_id
-        shift_date = shift_dates[shift_id - 1]
-        shift_date = shift_date.strftime('%Y-%m-%d')
-        hours = random.choice(hours_worked)
-        insert_statements.append(f"INSERT INTO EMPLOYEES.Shifts (EmployeeID, ShiftDate, HoursWorked) VALUES ({employee_id}, '{shift_date}', {hours});")
+        shift_name = shift_names[shift_id - 1]
+        shift_start_time = shift_start_times[shift_id - 1]
+        shift_end_time = shift_end_times[shift_id - 1]
+        insert_statements.append(f"INSERT INTO EMPLOYEES.Shifts (EmployeeID, Name, StartTime, EndTime) VALUES ({employee_id}, '{shift_name}', '{shift_start_time}', '{shift_end_time}');")
 
-    #Payroll
+    #Заплати
     payroll_amounts = [1000, 2000, 3000, 4000, 5000]
     payroll_bonuses = [100, 200, 300, 400, 500]
     for payroll_id in range(1, 6):
@@ -137,17 +160,19 @@ def generate_inserts(business_climate):
         payment_date = payment_date.strftime('%Y-%m-%d')
         insert_statements.append(f"INSERT INTO EMPLOYEES.Payroll (EmployeeID, Amount, Bonus, PaymentDate) VALUES ({employee_id}, {amount}, {bonus}, '{payment_date}');")
 
-    #Events
+    #Събития
     event_names = ['Concert', 'Festival', 'Exhibition', 'Workshop', 'Conference']
     event_categories = ['Music', 'Art', 'Science', 'Education', 'Business']
+    event_descriptions = ['Live music performances', 'Art installations', 'Scientific presentations', 'Educational activities', 'Business networking']
     for event_id in range(1, 6):
         event_name = event_names[event_id - 1]
         event_category = event_categories[event_id - 1]
+        event_description = event_descriptions[event_id - 1]
         start_date = datetime.datetime.now() - datetime.timedelta(days=random.randint(1, 30))
         end_date = start_date + datetime.timedelta(days=random.randint(1, 5))
         start_date = start_date.strftime('%Y-%m-%d')
         end_date = end_date.strftime('%Y-%m-%d')
-        insert_statements.append(f"INSERT INTO EVENTS.Events (Name, Category, StartDate, EndDate) VALUES ('{event_name}', '{event_category}', '{start_date}', '{end_date}');")
+        insert_statements.append(f"INSERT INTO EVENTS.Events (Name, Category, Description, StartDate, EndDate) VALUES ('{event_name}', '{event_category}', '{event_description}', '{start_date}', '{end_date}');")
 
     return insert_statements
 
