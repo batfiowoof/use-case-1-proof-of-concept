@@ -31,8 +31,8 @@ def generate_inserts(business_climate):
         insert_statements.append(f"INSERT INTO VISITORS.Entries (EntryTime, LeaveTime, VisitorId, TicketID) VALUES ('{entry_time}', '{leave_time}', {entry_id}, {entry_id});")
 
     #Attractions
-    attraction_categories = ['Museum', 'Zoo', 'Aquarium', 'Amusement Park', 'Cinema']
-    attraction_names = ['National Museum of History', 'Sofia Zoo', 'Varna Aquarium', 'Sunny Beach', 'Arena Cinema']
+    attraction_names = ['Rollercoaster', 'Ferris Wheel', 'Haunted House', 'Carousel', 'Bumper Cars']
+    attraction_categories = ['Thrill', 'Family', 'Horror', 'Kids', 'Fun']
     for attraction_id in range(1, 6):
         attraction_name = attraction_names[attraction_id - 1]
         attraction_category = attraction_categories[attraction_id - 1]
