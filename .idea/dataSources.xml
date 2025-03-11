@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="PARKDB@ZADPULG-JM37767.snowflakecomputing.com" uuid="6799a144-56d2-4bd7-81dc-1c5c7b102dca">
+      <driver-ref>snowflake</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>net.snowflake.client.jdbc.SnowflakeDriver</jdbc-driver>
+      <jdbc-url>jdbc:snowflake://ZADPULG-JM37767.snowflakecomputing.com/?user=BATFIOWOOF&amp;warehouse=COMPUTE_WH&amp;db=PARKDB&amp;schema=PUBLIC</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

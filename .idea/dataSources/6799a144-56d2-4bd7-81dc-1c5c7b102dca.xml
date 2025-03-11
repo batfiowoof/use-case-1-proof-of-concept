@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PARKDB@ZADPULG-JM37767.snowflakecomputing.com">
+  <database-model serializer="dbm" dbms="SNOWFLAKE" family-id="SNOWFLAKE" format-version="4.53">
+    <root id="1">
+      <ServerVersion>9.5.2</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="PARKDB">
+      <Current>1</Current>
+      <RetentionTime>1</RetentionTime>
+    </database>
+    <database id="3" parent="1" name="SNOWFLAKE">
+      <RetentionTime>0</RetentionTime>
+    </database>
+    <database id="4" parent="1" name="SNOWFLAKE_SAMPLE_DATA">
+      <Comment>Preloaded TPCH Data provided by Snowflake during account provisioning</Comment>
+      <RetentionTime>0</RetentionTime>
+    </database>
+    <role id="5" parent="1" name="ACCOUNTADMIN">
+      <Comment>Account administrator can manage all aspects of the account.</Comment>
+    </role>
+    <role id="6" parent="1" name="ORGADMIN">
+      <Comment>Organization administrator can manage organizations and accounts in organizations</Comment>
+    </role>
+    <role id="7" parent="1" name="PUBLIC">
+      <Comment>Public role is automatically available to every user in the account.</Comment>
+    </role>
+    <role id="8" parent="1" name="SECURITYADMIN">
+      <Comment>Security administrator can manage security aspects of the account.</Comment>
+    </role>
+    <role id="9" parent="1" name="SYSADMIN">
+      <Comment>System administrator can create and manage databases and warehouses.</Comment>
+    </role>
+    <role id="10" parent="1" name="USERADMIN">
+      <Comment>User administrator can create and manage users and roles</Comment>
+    </role>
+    <user id="11" parent="1" name="BATFIOWOOF">
+      <Display>BATFIOWOOF</Display>
+      <Email>bojidarlambov@abv.bg</Email>
+      <FirstName>Bozhidar</FirstName>
+      <LastName>Lambov</LastName>
+      <LoginName>BATFIOWOOF</LoginName>
+      <DefaultRoleName>ACCOUNTADMIN</DefaultRoleName>
+      <DefaultWarehouseName>COMPUTE_WH</DefaultWarehouseName>
+    </user>
+    <user id="12" parent="1" name="SNOWFLAKE">
+      <Display>SNOWFLAKE</Display>
+      <LoginName>SNOWFLAKE</LoginName>
+    </user>
+    <warehouse id="13" parent="1" name="COMPUTE_WH">
+      <AutoSuspend>600</AutoSuspend>
+      <ResourceMonitor>null</ResourceMonitor>
+      <Size>X-Small</Size>
+    </warehouse>
+    <warehouse id="14" parent="1" name="SYSTEM$STREAMLIT_NOTEBOOK_WH">
+      <AutoSuspend>60</AutoSuspend>
+      <ResourceMonitor>null</ResourceMonitor>
+      <Size>X-Small</Size>
+    </warehouse>
+    <schema id="15" parent="2" name="ATTRACTIONS">
+      <LastIntrospectionLocalTimestamp>2025-03-10.17:51:50</LastIntrospectionLocalTimestamp>
+      <RetentionTime>1</RetentionTime>
+    </schema>
+    <schema id="16" parent="2" name="EMPLOYEES">
+      <LastIntrospectionLocalTimestamp>2025-03-10.17:51:50</LastIntrospectionLocalTimestamp>
+      <RetentionTime>1</RetentionTime>
+    </schema>
+    <schema id="17" parent="2" name="EVENTS">
+      <LastIntrospectionLocalTimestamp>2025-03-10.17:51:50</LastIntrospectionLocalTimestamp>
+      <RetentionTime>1</RetentionTime>
+    </schema>
+    <schema id="18" parent="2" name="FINANCES">
+      <LastIntrospectionLocalTimestamp>2025-03-10.17:51:50</LastIntrospectionLocalTimestamp>
+      <RetentionTime>1</RetentionTime>
+    </schema>
+    <schema id="19" parent="2" name="INFORMATION_SCHEMA">
+      <Comment>Views describing the contents of schemas in this database</Comment>
+      <RetentionTime>1</RetentionTime>
+    </schema>
+    <schema id="20" parent="2" name="PUBLIC">
+      <Current>1</Current>
+      <LastIntrospectionLocalTimestamp>2025-03-10.17:51:50</LastIntrospectionLocalTimestamp>
+      <RetentionTime>1</RetentionTime>
+    </schema>
+    <schema id="21" parent="2" name="STORES">
+      <LastIntrospectionLocalTimestamp>2025-03-10.17:51:50</LastIntrospectionLocalTimestamp>
+      <RetentionTime>1</RetentionTime>
+    </schema>
+    <schema id="22" parent="2" name="VISITORS">
+      <LastIntrospectionLocalTimestamp>2025-03-10.17:51:50</LastIntrospectionLocalTimestamp>
+      <RetentionTime>1</RetentionTime>
+    </schema>
+    <table id="23" parent="15" name="ATTRACTIONS">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="24" parent="15" name="MAINTENANCERECORDS">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="25" parent="16" name="DEPARTMENTS">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="26" parent="16" name="EMPLOYEES">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="27" parent="16" name="PAYROLL">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="28" parent="16" name="POSITIONS">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="29" parent="16" name="SHIFTS">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="30" parent="17" name="EVENTS">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="31" parent="18" name="EXPENSES">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="32" parent="18" name="INCOMES">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="33" parent="21" name="INVENTORY">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="34" parent="21" name="PRODUCTS">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="35" parent="21" name="SALES">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="36" parent="21" name="STORES">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="37" parent="22" name="ENTRIES">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="38" parent="22" name="TICKETS">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <table id="39" parent="22" name="VISITORS">
+      <RetentionTime>1</RetentionTime>
+    </table>
+    <column id="40" parent="23" name="ATTRACTION_ID">
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="41" parent="23" name="NAME">
+      <Position>2</Position>
+      <StoredType>VARCHAR(20)|0s</StoredType>
+    </column>
+    <column id="42" parent="23" name="CAPACITY">
+      <Position>3</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="43" parent="23" name="AGE_RESTRICTION">
+      <Position>4</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="44" parent="23" name="CATEGORY">
+      <Position>5</Position>
+      <StoredType>VARCHAR(20)|0s</StoredType>
+    </column>
+    <column id="45" parent="23" name="STATUS">
+      <Position>6</Position>
+      <StoredType>VARCHAR(16777216)|0s</StoredType>
+    </column>
+    <column id="46" parent="24" name="MAINTENANCE_ID">
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="47" parent="24" name="ATTRACTION_ID">
+      <Position>2</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="48" parent="24" name="DESCRIPTION">
+      <Position>3</Position>
+      <StoredType>VARCHAR(16777216)|0s</StoredType>
+    </column>
+    <column id="49" parent="24" name="START_DATE">
+      <DefaultExpression>CURRENT_DATE()</DefaultExpression>
+      <Position>4</Position>
+      <StoredType>DATE|0s</StoredType>
+    </column>
+    <column id="50" parent="24" name="END_DATE">
+      <Position>5</Position>
+      <StoredType>DATE|0s</StoredType>
+    </column>
+    <column id="51" parent="25" name="DEPARTMENT_ID">
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="52" parent="25" name="NAME">
+      <Position>2</Position>
+      <StoredType>VARCHAR(16777216)|0s</StoredType>
+    </column>
+    <column id="53" parent="25" name="MANAGER_ID">
+      <Position>3</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="54" parent="26" name="EMPLOYEE_ID">
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="55" parent="26" name="DEPARTMENT_ID">
+      <Position>2</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="56" parent="26" name="FIRST_NAME">
+      <Position>3</Position>
+      <StoredType>VARCHAR(16777216)|0s</StoredType>
+    </column>
+    <column id="57" parent="26" name="LAST_NAME">
+      <Position>4</Position>
+      <StoredType>VARCHAR(16777216)|0s</StoredType>
+    </column>
+    <column id="58" parent="26" name="POSITION_ID">
+      <Position>5</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="59" parent="26" name="MANAGER_ID">
+      <Position>6</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="60" parent="27" name="PAYMENT_ID">
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="61" parent="27" name="EMPLOYEE_ID">
+      <Position>2</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="62" parent="27" name="PAYMENT_DATE">
+      <Position>3</Position>
+      <StoredType>DATE|0s</StoredType>
+    </column>
+    <column id="63" parent="27" name="AMOUNT">
+      <Position>4</Position>
+      <StoredType>DOUBLE|0s</StoredType>
+    </column>
+    <column id="64" parent="27" name="BONUS">
+      <Position>5</Position>
+      <StoredType>DOUBLE|0s</StoredType>
+    </column>
+    <column id="65" parent="28" name="POSITION_ID">
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="66" parent="28" name="NAME">
+      <Position>2</Position>
+      <StoredType>VARCHAR(16777216)|0s</StoredType>
+    </column>
+    <column id="67" parent="28" name="BASE_SALARY">
+      <Position>3</Position>
+      <StoredType>DOUBLE|0s</StoredType>
+    </column>
+    <column id="68" parent="29" name="SHIFT_ID">
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="69" parent="29" name="EMPLOYEE_ID">
+      <Position>2</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="70" parent="29" name="NAME">
+      <Position>3</Position>
+      <StoredType>VARCHAR(20)|0s</StoredType>
+    </column>
+    <column id="71" parent="29" name="START_TIME">
+      <Position>4</Position>
+      <StoredType>TIME(9)|0s</StoredType>
+    </column>
+    <column id="72" parent="29" name="END_TIME">
+      <Position>5</Position>
+      <StoredType>TIME(9)|0s</StoredType>
+    </column>
+    <column id="73" parent="30" name="EVENT_ID">
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="74" parent="30" name="NAME">
+      <Position>2</Position>
+      <StoredType>VARCHAR(16777216)|0s</StoredType>
+    </column>
+    <column id="75" parent="30" name="CATEGORY">
+      <Position>3</Position>
+      <StoredType>VARCHAR(16777216)|0s</StoredType>
+    </column>
+    <column id="76" parent="30" name="DESCRIPTION">
+      <Position>4</Position>
+      <StoredType>VARCHAR(16777216)|0s</StoredType>
+    </column>
+    <column id="77" parent="30" name="START_DATE">
+      <Position>5</Position>
+      <StoredType>DATE|0s</StoredType>
+    </column>
+    <column id="78" parent="30" name="END_DATE">
+      <Position>6</Position>
+      <StoredType>DATE|0s</StoredType>
+    </column>
+    <column id="79" parent="31" name="EXPENSE_ID">
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="80" parent="31" name="EXPENSE_TYPE">
+      <Position>2</Position>
+      <StoredType>VARCHAR(16777216)|0s</StoredType>
+    </column>
+    <column id="81" parent="31" name="AMOUNT">
+      <Position>3</Position>
+      <StoredType>DOUBLE|0s</StoredType>
+    </column>
+    <column id="82" parent="31" name="EXPENSE_DATE">
+      <DefaultExpression>CURRENT_DATE()</DefaultExpression>
+      <Position>4</Position>
+      <StoredType>DATE|0s</StoredType>
+    </column>
+    <column id="83" parent="32" name="INCOME_ID">
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="84" parent="32" name="INCOME_TYPE">
+      <Position>2</Position>
+      <StoredType>VARCHAR(16777216)|0s</StoredType>
+    </column>
+    <column id="85" parent="32" name="AMOUNT">
+      <Position>3</Position>
+      <StoredType>DOUBLE|0s</StoredType>
+    </column>
+    <column id="86" parent="32" name="INCOME_DATE">
+      <DefaultExpression>CURRENT_DATE()</DefaultExpression>
+      <Position>4</Position>
+      <StoredType>DATE|0s</StoredType>
+    </column>
+    <column id="87" parent="33" name="INVENTORY_ID">
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="88" parent="33" name="STORE_ID">
+      <Position>2</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="89" parent="33" name="PRODUCT_ID">
+      <Position>3</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="90" parent="33" name="QUANTITY">
+      <Position>4</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="91" parent="34" name="PRODUCT_ID">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="92" parent="34" name="STORE_ID">
+      <Position>2</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="93" parent="34" name="CATEGORY">
+      <Position>3</Position>
+      <StoredType>VARCHAR(16777216)|0s</StoredType>
+    </column>
+    <column id="94" parent="34" name="NAME">
+      <Position>4</Position>
+      <StoredType>VARCHAR(16777216)|0s</StoredType>
+    </column>
+    <column id="95" parent="34" name="PRICE">
+      <Position>5</Position>
+      <StoredType>DOUBLE|0s</StoredType>
+    </column>
+    <key id="96" parent="34" name="SYS_CONSTRAINT_acd99813-50e5-4167-9e50-44f77d0e7649">
+      <ColNames>PRODUCT_ID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="97" parent="35" name="SALE_ID">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="98" parent="35" name="STORE_ID">
+      <Position>2</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="99" parent="35" name="PRODUCT_ID">
+      <Position>3</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="100" parent="35" name="QUANTITY">
+      <Position>4</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="101" parent="35" name="TOTAL_PRICE">
+      <Position>5</Position>
+      <StoredType>DOUBLE|0s</StoredType>
+    </column>
+    <key id="102" parent="35" name="SYS_CONSTRAINT_3cde5881-a6cf-4103-919a-04c8a714b3ad">
+      <ColNames>SALE_ID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="103" parent="36" name="STORE_ID">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="104" parent="36" name="NAME">
+      <Position>2</Position>
+      <StoredType>VARCHAR(20)|0s</StoredType>
+    </column>
+    <column id="105" parent="36" name="CATEGORY">
+      <Position>3</Position>
+      <StoredType>VARCHAR(20)|0s</StoredType>
+    </column>
+    <column id="106" parent="36" name="OPENING_TIME">
+      <Position>4</Position>
+      <StoredType>TIME(9)|0s</StoredType>
+    </column>
+    <column id="107" parent="36" name="CLOSING_TIME">
+      <Position>5</Position>
+      <StoredType>TIME(9)|0s</StoredType>
+    </column>
+    <key id="108" parent="36" name="SYS_CONSTRAINT_84cca784-71c2-4855-9f62-542153d58f49">
+      <ColNames>STORE_ID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="109" parent="37" name="ENTRY_ID">
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="110" parent="37" name="VISITOR_ID">
+      <Position>2</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="111" parent="37" name="TICKET_ID">
+      <Position>3</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="112" parent="37" name="ENTRY_TIME">
+      <DefaultExpression>CURRENT_TIMESTAMP()</DefaultExpression>
+      <Position>4</Position>
+      <StoredType>TIMESTAMPLTZ(9)|0s</StoredType>
+    </column>
+    <column id="113" parent="37" name="LEAVE_TIME">
+      <Position>5</Position>
+      <StoredType>TIMESTAMPLTZ(9)|0s</StoredType>
+    </column>
+    <column id="114" parent="38" name="TICKET_ID">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="115" parent="38" name="VISITOR_ID">
+      <Position>2</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+    </column>
+    <column id="116" parent="38" name="TICKET_TYPE">
+      <Position>3</Position>
+      <StoredType>VARCHAR(10)|0s</StoredType>
+    </column>
+    <column id="117" parent="38" name="PRICE">
+      <Position>4</Position>
+      <StoredType>DOUBLE|0s</StoredType>
+    </column>
+    <column id="118" parent="38" name="PURCHASE_TIME">
+      <DefaultExpression>CURRENT_TIMESTAMP()</DefaultExpression>
+      <Position>5</Position>
+      <StoredType>TIMESTAMPLTZ(9)|0s</StoredType>
+    </column>
+    <key id="119" parent="38" name="SYS_CONSTRAINT_9d10786f-716b-4317-9cb0-0756e47465c1">
+      <ColNames>TICKET_ID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="120" parent="39" name="VISITOR_ID">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>NUMBER(38)|0s</StoredType>
+      <SequenceInline>1</SequenceInline>
+      <SequenceSequenceIdentity>null(1)</SequenceSequenceIdentity>
+    </column>
+    <column id="121" parent="39" name="FIRST_NAME">
+      <Position>2</Position>
+      <StoredType>VARCHAR(30)|0s</StoredType>
+    </column>
+    <column id="122" parent="39" name="LAST_NAME">
+      <Position>3</Position>
+      <StoredType>VARCHAR(30)|0s</StoredType>
+    </column>
+    <key id="123" parent="39" name="SYS_CONSTRAINT_94f39579-3392-4f8c-9978-708d7435b663">
+      <ColNames>VISITOR_ID</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

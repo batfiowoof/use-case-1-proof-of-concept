@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="PY-243.25659.43">
+    <data-source name="PARKDB@ZADPULG-JM37767.snowflakecomputing.com" uuid="6799a144-56d2-4bd7-81dc-1c5c7b102dca">
+      <database-info product="Snowflake" version="9.5.2" jdbc-version="4.2" driver-name="Snowflake" driver-version="3.20.0" dbms="SNOWFLAKE" exact-version="9.5.2" exact-driver-version="3.20">
+        <extra-name-characters>$</extra-name-characters>
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>BATFIOWOOF</user-name>
+      <schema-mapping>
+        <introspection-scope>
+          <node negative="1">
+            <node kind="database" qname="@">
+              <node kind="schema" qname="@" />
+            </node>
+            <node kind="database" qname="PARKDB">
+              <node kind="schema">
+                <name qname="FINANCES" />
+                <name qname="VISITORS" />
+                <name qname="ATTRACTIONS" />
+                <name qname="EMPLOYEES" />
+                <name qname="STORES" />
+                <name qname="EVENTS" />
+              </node>
+            </node>
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+  </component>
+</project>
