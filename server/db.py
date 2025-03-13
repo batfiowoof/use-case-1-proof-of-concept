@@ -21,6 +21,9 @@ def db_select(table, columns = '*', where = None, params = None):
     try:
         cursor.execute(query, params or {})
         data = [dict(zip([col[0] for col in cursor.description], row)) for row in cursor.fetchall()]
+    except snowflake.connector.errors.ProgrammingError as e:
+        print(e)
+        return jsonify({'Error %s (%s) : %s (%s)'} , (e.errno, e.sqlstate, e.msg, e.sfqid)), 400
     finally:
         cursor.close()
         con.close()
@@ -41,23 +44,33 @@ def db_insert(table, params = None):
     try:
         cursor.execute(query, query_data)
         con.commit()
+    except snowflake.connector.errors.ProgrammingError as e:
+        print(e)
+        return jsonify('Error %s (%s) : %s (%s)' % (e.errno, e.sqlstate, e.msg, e.sfqid)), 400
     finally:
         cursor.close()
         con.close()
     return jsonify("Created"), 201
 
 def db_update(table, data, where, params = None):
-    print(data)
+    #print(data)
     set_part = ', '.join([f'{key} = %s' for key in data.keys()]) # 'key1 = %s, key2 = %s, ...'
     val_part = tuple(data.values())
-    print(val_part)
+    #print(val_part)
     query = f'UPDATE {table} SET {set_part} WHERE {where}' # UPDATE table SET key1 = %s, key2 = %s, ... WHERE ...
 
     con = get_connection()
     cursor = con.cursor()
     try:
         cursor.execute(query, val_part + params or {}) # data.values() + params
+        updated_rows = cursor.rowcount
+
+        if updated_rows == 0:
+            return jsonify({'error': 'No record updated. Are you sure this exists?'}), 404
         con.commit()
+    except snowflake.connector.errors.ProgrammingError as e:
+        print(e)
+        return jsonify('Error %s (%s) : %s (%s)' % (e.errno, e.sqlstate, e.msg, e.sfqid)), 400
     finally:
         cursor.close()
         con.close()
@@ -69,7 +82,14 @@ def db_delete(table, where, params = None):
     cursor = con.cursor()
     try:
         cursor.execute(query, params or {})
+        deleted_rows = cursor.rowcount
+
+        if deleted_rows == 0:
+            return jsonify({'error': 'No record deleted. Are you sure this exists?'}), 404
         con.commit()
+    except Exception as e:
+        print(e)
+        return jsonify({'error': 'Internal server error, failed deleting data'}), 500
     finally:
         cursor.close()
         con.close()

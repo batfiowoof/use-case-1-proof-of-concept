@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f260674-55ae-44a8-94e6-c74ed56b15fe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/use-case-1-proof-of-concept.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/use-case-1-proof-of-concept.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/attractions_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/attractions_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/employees_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/employees_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +146,7 @@
       <workItem from="1741703820278" duration="5346000" />
       <workItem from="1741843887206" duration="7879000" />
       <workItem from="1741867968065" duration="1028000" />
-      <workItem from="1741869019402" duration="5684000" />
+      <workItem from="1741869019402" duration="7007000" />
     </task>
     <servers />
   </component>

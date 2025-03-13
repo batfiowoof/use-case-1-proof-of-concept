@@ -18,18 +18,6 @@ app.register_blueprint(events_route_reg)
 app.register_blueprint(visitors_route_reg)
 app.register_blueprint(incomes_route_reg)
 
-# ERROR HANDLING
-
-@app.errorhandler(404)
-def not_found(error):
-    return jsonify({'error': 'Address not found'}), 404
-
-@app.errorhandler(500)
-def internal_server_error(error):
-    return jsonify({'error': 'Internal server error, please try again later'}), 500
-
-def bad_request(error):
-    return jsonify({'error': 'Bad request :('}), 400
 
 
 if __name__ == '__main__':
