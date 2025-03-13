@@ -27,27 +27,41 @@ def db_select(table, columns = '*', where = None, params = None):
     return jsonify(data)
 
 def db_insert(table, params = None):
-    query = f'INSERT INTO {table} VALUES ({", ".join(["%s"] * len(params))})' # INSERT INTO table VALUES (%s, %s, %s, ...)
-    con = get_connection()
-    cursor = con.cursor()
-    try:
-        cursor.execute(query, params or {})
-        con.commit()
-    finally:
-        cursor.close()
-        con.close()
+    query_insert_col = ', '.join(params.keys()) # 'key1, key2, ...'
+    query_data = tuple(params.values())
+    query_count = len(query_data)
+    print(params.values)
 
-def db_update(table, set_values, where, params = None):
-    set_part = ', '.join([f'{key} = %s' for key in set_values.keys()]) # 'key1 = %s, key2 = %s, ...'
-    query = f'UPDATE {table} SET {set_part} WHERE {where}' # UPDATE table SET key1 = %s, key2 = %s, ... WHERE ...
+    query_insert_vals = ', '.join(['%s' for _ in range(query_count)]) # '%s, %s, ...'
+
+
+    query = f'INSERT INTO {table} ({query_insert_col}) VALUES ({query_insert_vals})' # INSERT INTO table (key1, key2, ...) VALUES (%s, %s, ...)
     con = get_connection()
     cursor = con.cursor()
     try:
-        cursor.execute(query, params or {})
+        cursor.execute(query, query_data)
         con.commit()
     finally:
         cursor.close()
         con.close()
+    return jsonify("Created"), 201
+
+def db_update(table, data, where, params = None):
+    print(data)
+    set_part = ', '.join([f'{key} = %s' for key in data.keys()]) # 'key1 = %s, key2 = %s, ...'
+    val_part = tuple(data.values())
+    print(val_part)
+    query = f'UPDATE {table} SET {set_part} WHERE {where}' # UPDATE table SET key1 = %s, key2 = %s, ... WHERE ...
+
+    con = get_connection()
+    cursor = con.cursor()
+    try:
+        cursor.execute(query, val_part + params or {}) # data.values() + params
+        con.commit()
+    finally:
+        cursor.close()
+        con.close()
+    return jsonify("Updated"), 200
 
 def db_delete(table, where, params = None):
     query = f'DELETE FROM {table} WHERE {where}' # DELETE FROM table WHERE ...
@@ -59,3 +73,4 @@ def db_delete(table, where, params = None):
     finally:
         cursor.close()
         con.close()
+    return jsonify("Deleted"), 200
