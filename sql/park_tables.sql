@@ -69,7 +69,7 @@ CREATE OR REPLACE TABLE STORES.Stores(
 );
 
 CREATE OR REPLACE TABLE STORES.Products(
-    product_id INT AUTOINCREMENT,
+    product_id INT AUTOINCREMENT PRIMARY KEY,
     store_id INT,
     category STRING, -- Храна, напитки, дрехи и т.н.
     name STRING,
@@ -77,14 +77,14 @@ CREATE OR REPLACE TABLE STORES.Products(
 );
 
 CREATE OR REPLACE TABLE STORES.Inventory(
-    inventory_id INT AUTOINCREMENT,
+    inventory_id INT AUTOINCREMENT PRIMARY KEY,
     store_id INT,
     product_id INT,
     quantity INT
 );
 
 CREATE OR REPLACE TABLE STORES.Sales(
-    sale_id INT AUTOINCREMENT,
+    sale_id INT AUTOINCREMENT PRIMARY KEY,
     store_id INT,
     product_id INT,
     quantity INT,
@@ -96,14 +96,14 @@ CREATE OR REPLACE TABLE STORES.Sales(
 USE SCHEMA FINANCES;
 
 CREATE OR REPLACE TABLE FINANCES.Expenses(
-    expense_id INT AUTOINCREMENT,
+    expense_id INT AUTOINCREMENT PRIMARY KEY,
     expense_type STRING,
     amount FLOAT,
     expense_date DATE DEFAULT CURRENT_DATE -- При въвеждане на разход, датата е текущата по подразбиране
 );
 
 CREATE OR REPLACE TABLE FINANCES.Incomes(
-    income_id INT AUTOINCREMENT,
+    income_id INT AUTOINCREMENT PRIMARY KEY,
     income_type STRING,
     amount FLOAT,
     income_date DATE DEFAULT CURRENT_DATE -- Същото като за разходите
@@ -115,7 +115,7 @@ CREATE OR REPLACE TABLE FINANCES.Incomes(
 USE SCHEMA EMPLOYEES;
 
 CREATE OR REPLACE TABLE EMPLOYEES.Employees(
-    employee_id INT AUTOINCREMENT,
+    employee_id INT AUTOINCREMENT PRIMARY KEY,
     department_id INT,
     first_name STRING,
     last_name STRING,
@@ -125,20 +125,20 @@ CREATE OR REPLACE TABLE EMPLOYEES.Employees(
 );
 
 CREATE OR REPLACE TABLE EMPLOYEES.Departments(
-    department_id INT AUTOINCREMENT,
+    department_id INT AUTOINCREMENT PRIMARY KEY,
     name STRING,
     manager_id INT -- Мениджър на отдела, ако има такъв (може да е NULL)
 
 );
 
 CREATE OR REPLACE TABLE EMPLOYEES.Positions(
-    position_id INT AUTOINCREMENT,
+    position_id INT AUTOINCREMENT PRIMARY KEY,
     name STRING,
     base_salary FLOAT
 );
 
 CREATE OR REPLACE TABLE EMPLOYEES.Payroll(
-    payment_id INT AUTOINCREMENT,
+    payment_id INT AUTOINCREMENT PRIMARY KEY,
     employee_id INT,
     payment_date DATE,
     amount FLOAT,
@@ -147,7 +147,7 @@ CREATE OR REPLACE TABLE EMPLOYEES.Payroll(
 );
 
 CREATE OR REPLACE TABLE EMPLOYEES.Shifts(
-    shift_id INT AUTOINCREMENT,
+    shift_id INT AUTOINCREMENT PRIMARY KEY,
     employee_id INT,
     name VARCHAR(20),
     start_time TIME,
@@ -160,7 +160,7 @@ CREATE OR REPLACE TABLE EMPLOYEES.Shifts(
 USE SCHEMA EVENTS;
 
 CREATE OR REPLACE TABLE EVENTS.Events(
-    event_id INT AUTOINCREMENT,
+    event_id INT AUTOINCREMENT PRIMARY KEY,
     name STRING,
     category STRING, -- Специални събития, концерти, промоции
     description STRING,
