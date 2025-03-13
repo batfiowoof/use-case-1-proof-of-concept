@@ -3,10 +3,12 @@ import os
 import snowflake.connector
 
 from dotenv import load_dotenv
+from controllers.attractions_controller import attractions_route_reg
 
 app = Flask(__name__)
-load_dotenv()
-print('Env loaded!')
+
+app.register_blueprint(attractions_route_reg)
+
 
 # Snowflake connection
 
@@ -37,27 +39,6 @@ def fetch_data(query, params = None): # функция за изпълнение
     print('Connection closed')
     return [dict(zip(cols, row)) for row in rows] # връщаме резултата като списък от речници
 
-@app.route('/attractions', methods=['GET'])
-def get_attraction():
-    data = fetch_data('SELECT * FROM ATTRACTIONS.Attractions;')
-    return jsonify(data) # връщаме резултата като JSON
-
-@app.route('/attractions/<int:id>', methods=['GET'])
-def get_attraction_by_id(id):
-    data = fetch_data('SELECT * FROM ATTRACTIONS.Attractions WHERE attraction_id = %s', (id,)) # изпълняваме заявката с параметър id (така се избягва SQL injection)
-    if not data:
-        return jsonify({'error': f'Attraction with id {id} not found'}), 404
-    return jsonify(data), 200 # връщаме резултата като JSON
-
-@app.route('/employees', methods=['GET'])
-def get_employees():
-    data = fetch_data('SELECT * FROM EMPLOYEES.Employees')
-    return jsonify(data), 200
-
-@app.route('/employees/<int:id>', methods=['GET'])
-def get_employee_by_id(id):
-    data = fetch_data('SELECT * FROM EMPLOYEES.Employees WHERE employee_id = %s', (id,))
-    return jsonify(data), 200
 
 @app.route('/sales', methods=['GET'])
 def get_sales():
