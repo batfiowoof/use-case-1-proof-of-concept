@@ -6,7 +6,8 @@ sales_route_reg = Blueprint('sales', __name__)
 @sales_route_reg.route('/sales', methods=['GET'])
 def get_sales():
     order = request.args.get('order')
-    return db.db_select("STORES.Sales", order = order) # SELECT * FROM STORES.Sales
+    where = request.args.get('where')
+    return db.db_select("STORES.Sales", order = order, where = where) # SELECT * FROM STORES.Sales
 
 @sales_route_reg.route('/sales/<int:id>', methods=['GET'])
 def get_sale_by_id(id):

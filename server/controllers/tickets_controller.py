@@ -7,7 +7,8 @@ tickets_route_reg = Blueprint('tickets', __name__)
 @tickets_route_reg.route('/tickets', methods=['GET'])
 def get_tickets():
     order = request.args.get('order')
-    return db.db_select("VISITORS.Tickets", order = order)
+    where = request.args.get('where')
+    return db.db_select("VISITORS.Tickets", order = order, where = where)
 
 @tickets_route_reg.route('/tickets/<int:id>', methods=['GET'])
 def get_ticket_by_id(id):

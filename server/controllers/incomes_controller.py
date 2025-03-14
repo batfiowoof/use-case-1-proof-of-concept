@@ -7,7 +7,8 @@ incomes_route_reg = Blueprint('incomes', __name__)
 @incomes_route_reg.route('/incomes', methods=['GET'])
 def get_incomes():
     order = request.args.get('order')
-    return db.db_select("VISITORS.Incomes", order = order)
+    where = request.args.get('where')
+    return db.db_select("VISITORS.Incomes", order = order, where = where)
 
 @incomes_route_reg.route('/incomes/<int:id>', methods=['GET'])
 def get_income_by_id(id):

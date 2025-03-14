@@ -7,7 +7,8 @@ events_route_reg = Blueprint('events', __name__)
 @events_route_reg.route('/events', methods=['GET'])
 def get_events():
     order = request.args.get('order')
-    return db.db_select("EVENTS.Events", order = order)
+    where = request.args.get('where')
+    return db.db_select("EVENTS.Events", order = order, where = where)
 
 @events_route_reg.route('/events/<int:id>', methods=['GET'])
 def get_event_by_id(id):
