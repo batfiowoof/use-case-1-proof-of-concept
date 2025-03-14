@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f260674-55ae-44a8-94e6-c74ed56b15fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/use-case-1-proof-of-concept.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/use-case-1-proof-of-concept.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/attractions_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/attractions_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/employees_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/employees_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/events_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/events_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/incomes_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/incomes_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/sales_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/sales_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/tickets_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/tickets_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/visitors_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/visitors_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/db.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +149,9 @@
       <workItem from="1741867968065" duration="1028000" />
       <workItem from="1741869019402" duration="7218000" />
       <workItem from="1741931324201" duration="856000" />
-      <workItem from="1741933773612" duration="806000" />
+      <workItem from="1741933773612" duration="1115000" />
+      <workItem from="1741935738803" duration="702000" />
+      <workItem from="1741936494212" duration="1635000" />
     </task>
     <servers />
   </component>
