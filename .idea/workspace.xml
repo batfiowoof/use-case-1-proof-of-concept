@@ -5,20 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f260674-55ae-44a8-94e6-c74ed56b15fe" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/ATTRACTIONS.zCFLyA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/ATTRACTIONS.zCFLyA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/EMPLOYEES.Zf9RQw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/EMPLOYEES.Zf9RQw.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/EVENTS.GdWaeg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/EVENTS.GdWaeg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/FINANCES.2ZsLBg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/FINANCES.2ZsLBg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/INFORMATION_SCHEMA.NBgcMw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/INFORMATION_SCHEMA.NBgcMw.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/PUBLIC.aaZQjQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/PUBLIC.aaZQjQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/STORES.shdnkg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/STORES.shdnkg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/VISITORS.xUkajQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6799a144-56d2-4bd7-81dc-1c5c7b102dca/storage_v2/_src_/database/PARKDB.6BE-jA/schema/VISITORS.xUkajQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/use-case-1-proof-of-concept.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/use-case-1-proof-of-concept.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connect.sql" beforeDir="false" afterPath="$PROJECT_DIR$/connect.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/park_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/park_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/attractions_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/attractions_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/employees_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/employees_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/events_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/events_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/incomes_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/incomes_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/sales_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/sales_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/tickets_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/tickets_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/visitors_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/visitors_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/db.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +58,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -70,11 +71,11 @@
       <recent name="C:\Users\Bozhidar\Desktop\JS React\use-case-1-proof-of-concept\server" />
     </key>
   </component>
-  <component name="RunManager" selected="Database Script.Unnamed">
+  <component name="RunManager" selected="Database Script.park_tables.sql">
     <configuration name="Unnamed" type="DatabaseScript" nameIsGenerated="true">
       <method v="2" />
     </configuration>
-    <configuration name="park_tables.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+    <configuration name="park_tables.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/park_tables.sql" />
       <script-mode>FILE</script-mode>
       <method v="2" />
@@ -159,6 +160,8 @@
       <workItem from="1741843887206" duration="7879000" />
       <workItem from="1741867968065" duration="1028000" />
       <workItem from="1741869019402" duration="7218000" />
+      <workItem from="1741931324201" duration="856000" />
+      <workItem from="1741933773612" duration="806000" />
     </task>
     <servers />
   </component>

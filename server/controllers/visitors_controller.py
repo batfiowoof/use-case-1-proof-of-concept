@@ -6,7 +6,8 @@ visitors_route_reg = Blueprint('visitors', __name__)
 
 @visitors_route_reg.route('/visitors', methods=['GET'])
 def get_visitors():
-    return db.db_select("VISITORS.Visitors")
+    order = request.args.get('order')
+    return db.db_select("VISITORS.Visitors", order = order)
 
 @visitors_route_reg.route('/visitors/<int:id>', methods=['GET'])
 def get_visitor_by_id(id):

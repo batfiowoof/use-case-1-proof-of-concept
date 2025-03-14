@@ -6,7 +6,8 @@ attractions_route_reg = Blueprint('attractions', __name__)
 
 @attractions_route_reg.route('/attractions', methods=['GET'])
 def get_attractions():
-    return db.db_select("ATTRACTIONS.Attractions")
+    order = request.args.get('order')
+    return db.db_select("ATTRACTIONS.Attractions", order = order)
 
 @attractions_route_reg.route('/attractions/<int:id>', methods=['GET'])
 def get_attraction_by_id(id):

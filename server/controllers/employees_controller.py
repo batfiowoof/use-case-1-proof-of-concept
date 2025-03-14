@@ -5,7 +5,8 @@ employees_route_reg = Blueprint('employees', __name__)
 
 @employees_route_reg.route('/employees', methods=['GET'])
 def get_employees():
-    return db.db_select("EMPLOYEES.Employees")
+    order = request.args.get('order')
+    return db.db_select("EMPLOYEES.Employees", order = order)
 
 @employees_route_reg.route('/employees/<int:id>', methods=['GET'])
 def get_employee_by_id(id):

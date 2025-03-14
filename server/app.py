@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask
 
 from controllers.attractions_controller import attractions_route_reg
 from controllers.employees_controller import employees_route_reg

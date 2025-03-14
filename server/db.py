@@ -2,6 +2,9 @@ from flask import jsonify
 import snowflake.connector
 
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_connection():
     return snowflake.connector.connect(user=os.getenv('SNOWFLAKE_USER'),
@@ -12,10 +15,14 @@ def get_connection():
     schema=os.getenv('SNOWFLAKE_SCHEMA'),
     role=os.getenv('SNOWFLAKE_ROLE'))
 
-def db_select(table, columns = '*', where = None, params = None):
+def db_select(table, columns = '*', where = None, order = None, params = None):
     query = f'SELECT {columns} FROM {table}'
     if where:
         query += f' WHERE {where}'
+
+    if order:
+        query += f' ORDER BY {order}'
+    print(query)
     con = get_connection()
     cursor = con.cursor()
     try:
